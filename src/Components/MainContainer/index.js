@@ -13,7 +13,7 @@ const MainContainer = () => {
 
   const { res , err } = useFetch(); // API 통신 성공시 res , 실패시 err
 
-  const [selected,setSelected] = useState(null) // 현재 선택한 Item
+  const [selected,setSelected] = useState() // 현재 선택한 Item
 
   useEffect(()=>{
     if(data === ''){
@@ -24,7 +24,7 @@ const MainContainer = () => {
 
   return (
     <S.Container>
-      <ImageContainer data={data} />
+      <ImageContainer data={data} setSelected={setSelected} selected={selected}/>
       <ItemContainer data={data} setSelected={setSelected} selected={selected}/>
     </S.Container>
   );

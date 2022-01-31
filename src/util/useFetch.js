@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function useFetch() {
+const useFetch = () => {
   const [res, setRes] = useState();
   const [err, setErr] = useState();
 
@@ -16,7 +16,7 @@ function useFetch() {
       .catch((err) => {
         setErr(err);
       });
-  }, [url]);
+  }, []);
 
   return { res, err };
 }
