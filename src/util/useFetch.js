@@ -16,7 +16,7 @@ function useFetch() {
       .catch((err) => {
         setErr(err);
       });
-  }, []);
+  }, [url]);
 
   return { res, err };
 }

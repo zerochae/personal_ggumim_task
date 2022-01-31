@@ -1,9 +1,16 @@
 import React from 'react';
 
-export const ImageContainer = () => {
-  return <div></div>;
+import * as S from './style';
+
+const ImageContainer = (props) => {
+  return <S.IMGContainer>
+    <S.Img imageUrl={props.data.imageUrl}>
+    </S.Img>
+  </S.IMGContainer>;
 };
 
 const Modal = () => {
-  return <div></div>;
+  return <S.ModalContainer></S.ModalContainer>;
 }
+
+export default ImageContainer;
