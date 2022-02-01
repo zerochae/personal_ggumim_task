@@ -3,10 +3,10 @@ import React from "react";
 import * as S from "./style";
 
 const ImageContainer = (props) => {
-  const search = (
+  const detail = (
     <img
       src="//cdn.ggumim.co.kr/storage/20211029145238AlZrQ41xtg.png"
-      alt="search"
+      alt="detail"
     />
   );
 
@@ -27,14 +27,14 @@ const ImageContainer = (props) => {
         {props.data &&
           props.data.productList.map((item, index) => {
             return (
-              <S.Search
+              <S.Btn
                 key={item.productId}
-                top={item.pointX}
-                left={item.pointY}
+                X={item.pointX}
+                Y={item.pointY}
                 onClick={()=>{handleSearch(index)}}
               >
-                {props.selected !== index ? search : close}
-              </S.Search>
+                {props.selected !== index ? detail : close}
+              </S.Btn>
             );
           })}
         <Modal />

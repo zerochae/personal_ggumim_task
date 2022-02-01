@@ -18,6 +18,7 @@ export const ItemInnerContainer = styled.div`
   border-radius: 16px;
   cursor: pointer;
   position: relative;
+  background-size: cover;
 `;
 
 export const Item = styled.div`
@@ -53,8 +54,8 @@ export const Badge = styled.div`
   line-height: 25px;
   text-align: center;
   padding-left: 1px;
-  color:#fff;
-  span{
+  color: #fff;
+  span {
     font-size: 8px;
   }
 `;

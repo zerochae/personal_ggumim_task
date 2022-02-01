@@ -16,13 +16,13 @@ export const Img = styled.div`
 
 export const ModalContainer = styled.div``;
 
-export const Search = styled.div`
+export const Btn = styled.div`
 width: 40px;
 height: 40px;
 position: absolute;
 cursor: pointer;
-top: ${props => props.top}px;
-left: ${props => props.left}px;
+top: ${props => props.X * 1.66}px;
+left: ${props => props.Y * 1.66}px;
 
 img{
   width: 32px;
