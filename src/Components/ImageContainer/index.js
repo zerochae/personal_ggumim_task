@@ -31,20 +31,25 @@ const ImageContainer = (props) => {
 
   return (
     <S.IMGContainer>
-      <S.Img imageUrl={props.data.imageUrl} onClick={() => {}}>
+      <S.Img
+        imageUrl={props.data.imageUrl}
+        onClick={() => {
+          props.setSelected();
+        }}
+      >
         {props.data &&
           props.data.productList.map((item, index) => {
             return (
-              <S.BtnContainer X={item.pointX} Y={item.pointY}>
-                <S.Btn
-                  key={item.productId}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSearch(index);
-                  }}
-                >
-                  {props.selected !== index ? detail : close}
-                </S.Btn>
+              <S.BtnContainer
+                X={item.pointX}
+                Y={item.pointY}
+                key={item.productId}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  handleSearch(index);
+                }}
+              >
+                <S.Btn>{props.selected !== index ? detail : close}</S.Btn>
                 {props.selected === index ? (
                   <Modal X={item.pointX} Y={item.pointY} data={item} />
                 ) : null}

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const IMGContainer = styled.div`
   width: 100%;
+  cursor: pointer;
 `;
 
 export const Img = styled.div`
