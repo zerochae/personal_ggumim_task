@@ -33,12 +33,25 @@ export const Btn = styled.div`
 `;
 export const ModalContainer = styled.div`
 
-  /* top props.X * 1.6 */
-  /* left props.Y * 1.66 */
+  &::before {
+    top: ${(props) => (props.X * 1.6 <= 500 ? `-8px` : `unset`)};
+    bottom: ${(props) => (props.X * 1.6 <= 500 ? `0` : `-8px`)};
+    left: ${(props) => (props.Y * 1.66 <= 400 ? `30px` : `unset`)};
+    right: ${(props) => (props.Y * 1.66 <= 400 ? `0` : `37px`)};
+    transform: ${(props) => (props.X * 1.6 <= 500 ? `` : `rotate(180deg)`)};
+    content: "";
+    background-image: url(//cdn.ggumim.co.kr/storage/20211118152728RO3OXnhkrC.png);
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 999;
+    width: 12px;
+    height: 8px;
+  }
 
-  top : ${props => props.X * 1.6 <= 500 ? `28px` : `unset`};
-  bottom : ${props => props.X * 1.6 <= 500 ? `0` : `52px`};
-  left: ${props => props.Y * 1.66 <= 400 ? `-20px` : `-160px`};
+  top: ${(props) => (props.X * 1.6 <= 500 ? `28px` : `unset`)};
+  bottom: ${(props) => (props.X * 1.6 <= 500 ? `0` : `52px`)};
+  left: ${(props) => (props.Y * 1.66 <= 400 ? `-20px` : `-160px`)};
 
   width: 220px;
   height: 86px;

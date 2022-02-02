@@ -45,7 +45,9 @@ const ImageContainer = (props) => {
                 >
                   {props.selected !== index ? detail : close}
                 </S.Btn>
-                {props.selected === index ? <Modal X={item.pointX} Y={item.pointY} data={item} /> : null}
+                {props.selected === index ? (
+                  <Modal X={item.pointX} Y={item.pointY} data={item} />
+                ) : null}
               </S.BtnContainer>
             );
           })}
