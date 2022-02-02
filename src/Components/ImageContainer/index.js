@@ -31,7 +31,7 @@ const ImageContainer = (props) => {
 
   return (
     <S.IMGContainer>
-      <S.Img imageUrl={props.data.imageUrl} onClick={()=>{}}>
+      <S.Img imageUrl={props.data.imageUrl} onClick={() => {}}>
         {props.data &&
           props.data.productList.map((item, index) => {
             return (
@@ -45,7 +45,7 @@ const ImageContainer = (props) => {
                 >
                   {props.selected !== index ? detail : close}
                 </S.Btn>
-                {props.selected === index ? <Modal data={item} /> : null}
+                {props.selected === index ? <Modal X={item.pointX} Y={item.pointY} data={item} /> : null}
               </S.BtnContainer>
             );
           })}
@@ -56,7 +56,7 @@ const ImageContainer = (props) => {
 
 const Modal = (props) => {
   return (
-    <S.ModalContainer>
+    <S.ModalContainer X={props.X} Y={props.Y}>
       <S.ModalImg imageUrl={props.data.imageUrl}></S.ModalImg>
       <S.ModalContent>
         <h4 className="productName">{props.data.productName}</h4>
@@ -66,10 +66,14 @@ const Modal = (props) => {
           ) : (
             <span className="noDiscount">예상가</span>
           )}
-          <span className="price">{props.data.priceDiscount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>
+          <span className="price">
+            {props.data.priceDiscount
+              .toString()
+              .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+          </span>
         </p>
       </S.ModalContent>
-        {arrow}
+      {arrow}
     </S.ModalContainer>
   );
 };

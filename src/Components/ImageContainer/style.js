@@ -32,9 +32,19 @@ export const Btn = styled.div`
   }
 `;
 export const ModalContainer = styled.div`
+  /* top: ${(props) => props.X * 1.6}px;
+  left: ${(props) => props.Y * 1.66}px; */
+
+  /* bottom: ${(props) => props.X > 300 ? '160' : ""}px;
+  left: ${(props) => props.Y > 400 ? '-160' : ""}px; */
+
+  left: -160px;
+  top: unset;
+  bottom: 52px;
+
   width: 220px;
   height: 86px;
-  position: relative;
+  position: absolute;
   background: #fffffff2;
   padding: 8px 0 8px 8px;
   margin-top: 16px;
@@ -60,21 +70,28 @@ export const ModalImg = styled.div`
 `;
 
 export const ModalContent = styled.div`
-  flex:1;
+  flex: 1;
   padding: 0 0 2px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  font-size: 14px;
+  max-width: 112px;
+
+  p {
+    line-height: 1.2em;
+  }
 
   & .productName {
     color: #333c45;
-    line-height: 14px;
+    line-height: 1.3em;
     text-overflow: ellipsis;
   }
 
   & .discountRate {
-    color:#ff585d;
+    font-size: 16px;
+    color: #ff585d;
     margin: 0 4px 0 0;
     font-weight: bold;
   }
@@ -87,7 +104,7 @@ export const ModalContent = styled.div`
   }
 
   & .price {
-    color:#181d1f;
+    color: #181d1f;
     font-size: 16px;
     font-weight: bold;
   }
