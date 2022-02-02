@@ -16,7 +16,7 @@ export const Img = styled.div`
 
 export const BtnContainer = styled.div`
   top: ${(props) => props.X * 1.6}px;
-  left: ${(props) => props.Y * 1.66}px;
+  left: ${(props) => props.Y * 1.6}px;
   position: absolute;
 `;
 
@@ -32,15 +32,13 @@ export const Btn = styled.div`
   }
 `;
 export const ModalContainer = styled.div`
-  /* top: ${(props) => props.X * 1.6}px;
-  left: ${(props) => props.Y * 1.66}px; */
 
-  /* bottom: ${(props) => props.X > 300 ? '160' : ""}px;
-  left: ${(props) => props.Y > 400 ? '-160' : ""}px; */
+  /* top props.X * 1.6 */
+  /* left props.Y * 1.66 */
 
-  left: -160px;
-  top: unset;
-  bottom: 52px;
+  top : ${props => props.X * 1.6 <= 500 ? `28px` : `unset`};
+  bottom : ${props => props.X * 1.6 <= 500 ? `0` : `52px`};
+  left: ${props => props.Y * 1.66 <= 400 ? `-20px` : `-160px`};
 
   width: 220px;
   height: 86px;
@@ -51,6 +49,7 @@ export const ModalContainer = styled.div`
   border-radius: 7px;
   z-index: 999;
   display: flex;
+  box-shadow: 3px 3px 8px 0 rgb(0 0 0 / 20%);
 
   & .btnArrow {
     height: 20px;
