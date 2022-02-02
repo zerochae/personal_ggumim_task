@@ -68,7 +68,7 @@ const Modal = (props) => {
       <S.ModalContent>
         <h4 className="productName">{props.data.productName}</h4>
         <p>
-          {props.data.discountRate !== 0 ? (
+          {!props.data.outside ? (
             <span className="discountRate">{props.data.discountRate}%</span>
           ) : (
             <span className="noDiscount">예상가</span>
