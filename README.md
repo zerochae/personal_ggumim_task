@@ -1,6 +1,6 @@
 # 집 꾸미기 과제 - 집 소개 페이지 
 
-## <a href="https://loving-leakey-c46b8f.netlify.app" target="_blank">GO DEMO🚀</a>
+## [GO DEMO🚀][]
 
 ## Developer
 
@@ -64,3 +64,5 @@
 - 예상 가격
   
 ## Review
+
+[GO DEMO🚀]: https://loving-leakey-c46b8f.netlify.app
