@@ -26,11 +26,33 @@
 
 ### Event Bubbling
 
-### Slide
+메인 사진을 클릭시 선택된 가구를 초기화해주는 클릭이벤트를 작성하던 도중 이벤트 버블링 현상을 경험했습니다.
 
-### Position Absolute
+```jsx
+  <Img onClick={()=>{console.log("Image")}}>
+    <Btn onClick={()=>{console.log("Button")}}>
+    <Btn/>
+  </Img>
+```
+
+![bubbling](https://user-images.githubusercontent.com/84373490/152382735-361941a0-fd3c-478d-a56d-d1199217de62.gif)
+
+
+Btn의 클릭 이벤트 발생 시 상위 부모 요소까지 이벤트가 전파되기 때문이였습니다. `stopPropagation()` 메소드로 해당 현상을 해결하였습니다.
+```jsx
+  <Img onClick={()=>{console.log("Image")}}>
+    <Btn onClick={(e)=>{
+    e.stopPropagation();
+    console.log("Button")
+    }}>
+    <Btn/>
+  </Img>
+```
+![solve](https://user-images.githubusercontent.com/84373490/152382741-b8d6c714-5ec3-47ba-931a-748eaed599b0.gif)
 
 ## Requirements
+
+![Animation](https://user-images.githubusercontent.com/84373490/152384049-6940f2c4-5f24-47e3-b911-1aa28a7f27d3.gif)
 
 ✔️ 사진과 가구에 대한 정보는 API(cdn.ggumim.co.kr/test/image_product_link.json)를 통해서 호출
 
@@ -64,5 +86,7 @@
 - 예상 가격
   
 ## Review
+
+이슈 항목의 이벤트 버블링 현상을 해결하려다가, 이벤트 전달 방식에 궁금증이 생겨서 이벤트 캡처, 이벤트 델리게이션 까지 공부하게 되는 좋은 기회가 되었습니다.
 
 [GO DEMO🚀]: https://loving-leakey-c46b8f.netlify.app
