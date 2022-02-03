@@ -1,6 +1,6 @@
 # 집 꾸미기 과제 - 집 소개 페이지 
 
-## [GO DEMO🚀](https://loving-leakey-c46b8f.netlify.app)
+## <a href="https://loving-leakey-c46b8f.netlify.app" target="_blank">GO DEMO🚀</a>
 
 ## Developer
 
